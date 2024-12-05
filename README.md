@@ -39,6 +39,17 @@ When a Java serialized payload is intercepted:
 - The extension is read-only and does not allow payload modification
 - Only supports standard Java serialized payloads
 - Errors may occur with malformed payloads or non-standard Java classes
+- 
+## Adding Required Java Classes
+
+To properly deserialize Java objects, you need to add the corresponding Java classes to Burp Suite's classpath:
+
+1. Go to `Extender` -> `Options`
+2. Under "Java Environment", locate the "Folder for loading additional Java libraries"
+3. Add the folder containing the required .jar files or class files
+4. Restart Burp Suite to apply the changes
+
+Without the proper classes in the classpath, the extension may fail to deserialize objects or show incomplete results.
 
 ## License
 
